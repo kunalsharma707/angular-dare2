@@ -1,0 +1,39 @@
+.text-danger {
+  color: red;
+}
+.f-r {
+  float: right;
+}
+.f-l {
+  float: left;
+}
+.f-none {
+  clear: both;
+}
+.mx-3 {
+  margin-left: 30px;
+  margin-right: 30px;
+}
+.px-3 {
+  padding-left: 30px;
+  padding-right: 30px;
+}
+.box-r {
+  background-color: red;
+  color: #fff;
+  padding: 6px 10px 6px 10px;
+  border-radius: 5px;
+  margin: 5px;
+  width: 37px;
+}
+
+.box-g {
+  background-color: green;
+  color: #fff;
+}
+
+.card {
+  border: 1px gray solid;
+  padding: 20px;
+  margin: 15px;
+}

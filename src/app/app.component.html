@@ -1,0 +1,37 @@
+<div class="f-l mx-3 px-3">
+  <form #mytUser="ngForm" (ngSubmit)="reserveSeat()">
+    <p class="text-danger" *ngIf="hasError">{{error}}</p>
+    <div class="card">
+      <select
+        name="user"
+        (change)="getReservedSeat($event.target)"
+        [(ngModel)]="trainUser.user"
+      >
+        <option selected value="default">Choose your user</option>
+        <option *ngFor="let user of users" [value]="user.id"
+          >{{user.name}}</option
+        >
+      </select>
+    </div>
+    <div class="card">
+      <input type="text" name="seat" required [(ngModel)]="trainUser.seat" />
+      <br />
+      <button [disabled]="mytUser.invalid" type="submit">reserve Seat</button>
+    </div>
+  </form>
+  <div class="card" *ngIf="trainUser.user!='default'">
+    <h2>{{trainUser.user}}</h2>
+    <h3>Total Reserved Seat is {{totalReservedSeat}}</h3>
+  </div>
+</div>
+<div class="f-r mx-3 px-3" *ngIf="trainUser.user!='default'">
+  <div *ngFor="let output of seatOutput" class="f-none">
+    <div
+      *ngFor="let in_output of output"
+      [class.box-g]="in_output <= totalReservedSeat"
+      class="box-r f-l"
+    >
+      {{in_output}}
+    </div>
+  </div>
+</div>
